@@ -26,7 +26,7 @@ namespace MyTasks.iOS.Views
             var set = this.CreateBindingSet<TaskListView, TaskListViewModel>();
             set.Bind(TaskTitleTextField).To(vm => vm.NewTaskTitle);
             set.Bind(AddTaskButton).To(vm => vm.AddNewTaskCommand);
-            var source = new MvxStandardTableViewSource(TaskListTableView, "TitleText .");
+            var source = new MvxStandardTableViewSource(TaskListTableView, "TitleText Title");
             TaskListTableView.Source = source;
             set.Bind(source).To(vm => vm.ListItems);
             set.Apply();

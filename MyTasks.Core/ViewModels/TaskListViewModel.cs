@@ -1,15 +1,19 @@
 ﻿using System.Collections.ObjectModel;
 using MvvmCross.Core.ViewModels;
+using MyTasks.Core.Models;
+using MyTasks.Core.Services;
 
 namespace MyTasks.Core.ViewModels
 {
     public class TaskListViewModel : MvxViewModel
     {
-        public ObservableCollection<string> ListItems { get; set; }
+        private ITaskService _taskService;
+        public ObservableCollection<TaskModel> ListItems { get; set; }
 
-        public TaskListViewModel()
+        public TaskListViewModel(ITaskService taskService)
         {
-            ListItems = new ObservableCollection<string>();
+            _taskService = taskService;
+            ListItems = new ObservableCollection<TaskModel>();
         }
 
         private string _newTaskTitle;
@@ -28,9 +32,24 @@ namespace MyTasks.Core.ViewModels
             {
                 return;
             }
-            ListItems.Add(NewTaskTitle);
+            var item = _taskService.AddTask(NewTaskTitle);
+            ListItems.Add(item);
         }
-
-
+
+        public override void Start()
+        {
+            base.Start();
+            LoadTasks();
+        }
+
+        private void LoadTasks()
+        {
+            var items = _taskService.GetTasks();
+            ListItems.Clear();
+            foreach (var item in items)
+            {
+                ListItems.Add(item);
+            }
+        }
     }
 }
