@@ -91,8 +91,11 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\FirstView.designer.cs" />
+    <Compile Include="Views\TaskListView.cs" />
+    <Compile Include="Views\TaskListView.designer.cs">
+      <DependentUpon>TaskListView.cs</DependentUpon>
+    </Compile>
     <Content Include="AppDelegate.cs.txt" />
-    <Content Include="ToDo-MvvmCross\_ iOS UI.txt" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +103,7 @@
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
     <InterfaceDefinition Include="Views\FirstView.xib" />
+    <InterfaceDefinition Include="Views\TaskListView.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
