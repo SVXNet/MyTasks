@@ -2,17 +2,20 @@
 using MvvmCross.Core.ViewModels;
 using MyTasks.Core.Models;
 using MyTasks.Core.Services;
+using Plugin.Fingerprint.Abstractions;
 
 namespace MyTasks.Core.ViewModels
 {
     public class TaskListViewModel : MvxViewModel
     {
         private readonly ITaskService _taskService;
+        private readonly IFingerprint _fingerprint;
         public ObservableCollection<TaskModel> ListItems { get; set; }
 
-        public TaskListViewModel(ITaskService taskService)
+        public TaskListViewModel(ITaskService taskService, IFingerprint fingerprint)
         {
             _taskService = taskService;
+            _fingerprint = fingerprint;
             ListItems = new ObservableCollection<TaskModel>();
         }
 
@@ -47,10 +50,15 @@ namespace MyTasks.Core.ViewModels
             }
             ShowViewModel<TaskDetailsViewModel>(new TaskDetailsViewModel.Parameters {TaskId = task.Id});
         }
-        public override void Start()
+
+        public override async void Start()
         {
             base.Start();
-            LoadTasks();
+            var result = await _fingerprint.AuthenticateAsync("Prove you have mvx fingers!");
+            if (result.Authenticated)
+            {
+                LoadTasks();
+            }
         }
 
         private void LoadTasks()

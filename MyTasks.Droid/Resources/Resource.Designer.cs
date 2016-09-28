@@ -49,6 +49,12 @@ namespace MyTasks.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MyTasks.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 			global::PCLCrypto.Resource.String.ApplicationName = global::MyTasks.Droid.Resource.String.ApplicationName;
 			global::PCLCrypto.Resource.String.Hello = global::MyTasks.Droid.Resource.String.Hello;
+			global::Plugin.Fingerprint.Resource.Drawable.fingerprint_white = global::MyTasks.Droid.Resource.Drawable.fingerprint_white;
+			global::Plugin.Fingerprint.Resource.Id.fingerprint_btnCancel = global::MyTasks.Droid.Resource.Id.fingerprint_btnCancel;
+			global::Plugin.Fingerprint.Resource.Id.fingerprint_btnFallback = global::MyTasks.Droid.Resource.Id.fingerprint_btnFallback;
+			global::Plugin.Fingerprint.Resource.Id.fingerprint_imgFingerprint = global::MyTasks.Droid.Resource.Id.fingerprint_imgFingerprint;
+			global::Plugin.Fingerprint.Resource.Id.fingerprint_txtReason = global::MyTasks.Droid.Resource.Id.fingerprint_txtReason;
+			global::Plugin.Fingerprint.Resource.Layout.FingerprintDialog = global::MyTasks.Droid.Resource.Layout.FingerprintDialog;
 		}
 		
 		public partial class Attribute
@@ -89,10 +95,13 @@ namespace MyTasks.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int fingerprint_white = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int splash = 2130837505;
+			public const int Icon = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int splash = 2130837506;
 			
 			static Drawable()
 			{
@@ -113,6 +122,18 @@ namespace MyTasks.Droid
 			// aapt resource value: 0x7f050001
 			public const int MvxBindingTagUnique = 2131034113;
 			
+			// aapt resource value: 0x7f050004
+			public const int fingerprint_btnCancel = 2131034116;
+			
+			// aapt resource value: 0x7f050005
+			public const int fingerprint_btnFallback = 2131034117;
+			
+			// aapt resource value: 0x7f050002
+			public const int fingerprint_imgFingerprint = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int fingerprint_txtReason = 2131034115;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -127,22 +148,25 @@ namespace MyTasks.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int FirstView = 2130903040;
+			public const int FingerprintDialog = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int FirstView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int SplashScreen = 2130903042;
+			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int TaskDetailsView = 2130903043;
+			public const int SplashScreen = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int TaskListView = 2130903044;
+			public const int TaskDetailsView = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int TaskListView_ListItem = 2130903045;
+			public const int TaskListView = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int TaskListView_ListItem = 2130903046;
 			
 			static Layout()
 			{
