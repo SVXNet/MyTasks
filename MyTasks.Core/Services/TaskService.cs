@@ -12,7 +12,7 @@ namespace MyTasks.Core.Services
         private readonly IMvxFileStore _fileStore;
         private readonly IMvxJsonConverter _jsonConverter;
         private List<TaskModel> _tasks;
-        const string JsonDataFilePath = "taskdata.json";
+        const string JsonDataFilePath = "encryptedtaskdata.json";
 
         public TaskService(IMvxFileStore fileStore, IMvxJsonConverter jsonConverter)
         {
@@ -96,15 +96,20 @@ namespace MyTasks.Core.Services
         {
             string contents;
             _fileStore.TryReadTextFile(JsonDataFilePath, out contents);
-            _tasks = !string.IsNullOrWhiteSpace(contents)
-                ? _jsonConverter.DeserializeObject<List<TaskModel>>(contents)
-                : new List<TaskModel>();
+            if (string.IsNullOrWhiteSpace(contents))
+            {
+                _tasks = new List<TaskModel>();
+                return;
+            }
+            var decrypted = Encryption.DecryptString(contents, "password", "saltandpepper");
+            _tasks = _jsonConverter.DeserializeObject<List<TaskModel>>(decrypted);
         }
 
         private void SaveTasksToFile()
         {
             var contents = _jsonConverter.SerializeObject(_tasks);
-            _fileStore.WriteFile(JsonDataFilePath, contents);
+            var encrypted = Encryption.EncryptString(contents, "password", "saltandpepper");
+            _fileStore.WriteFile(JsonDataFilePath, encrypted);
         }
 
 

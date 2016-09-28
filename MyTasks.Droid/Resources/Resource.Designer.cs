@@ -47,6 +47,8 @@ namespace MyTasks.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MyTasks.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MyTasks.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MyTasks.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::PCLCrypto.Resource.String.ApplicationName = global::MyTasks.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::MyTasks.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -105,11 +107,11 @@ namespace MyTasks.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int MvvmCrossTagId = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int MvvmCrossTagId = 2131034112;
 			
-			// aapt resource value: 0x7f040001
-			public const int MvxBindingTagUnique = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int MvxBindingTagUnique = 2131034113;
 			
 			static Id()
 			{
@@ -155,11 +157,11 @@ namespace MyTasks.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int ApplicationName = 2131099649;
+			// aapt resource value: 0x7f040001
+			public const int ApplicationName = 2130968577;
 			
-			// aapt resource value: 0x7f060000
-			public const int Hello = 2131099648;
+			// aapt resource value: 0x7f040000
+			public const int Hello = 2130968576;
 			
 			static String()
 			{
@@ -174,8 +176,8 @@ namespace MyTasks.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int Theme_Splash = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int Theme_Splash = 2131099648;
 			
 			static Style()
 			{
