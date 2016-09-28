@@ -40,6 +40,7 @@
     <Compile Include="Services\ITaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
+    <Compile Include="ViewModels\TaskDetailsViewModel.cs" />
     <Compile Include="ViewModels\TaskListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

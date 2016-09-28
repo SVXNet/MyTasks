@@ -93,6 +93,10 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\FirstView.designer.cs" />
+    <Compile Include="Views\TaskDetailsView.cs" />
+    <Compile Include="Views\TaskDetailsView.designer.cs">
+      <DependentUpon>TaskDetailsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TaskListView.cs" />
     <Compile Include="Views\TaskListView.designer.cs">
       <DependentUpon>TaskListView.cs</DependentUpon>
@@ -106,6 +110,7 @@
     <None Include="packages.config" />
     <InterfaceDefinition Include="Views\FirstView.xib" />
     <InterfaceDefinition Include="Views\TaskListView.xib" />
+    <InterfaceDefinition Include="Views\TaskDetailsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">

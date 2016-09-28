@@ -30,7 +30,7 @@ namespace MyTasks.Core.Services
             {
                 Id = nextId,
                 Title = title,
-                CompleteBy = completeBy ?? DateTime.MaxValue,
+                CompleteBy = completeBy ?? DateTime.Now.AddDays(7),
                 AddedOn = DateTime.UtcNow
             };
             _tasks.Add(newTask);
@@ -55,6 +55,11 @@ namespace MyTasks.Core.Services
         {
             var task = _tasks.FirstOrDefault(t => t.Id == taskId);
             return task;
+        }
+
+        public void SaveTasks()
+        {
+            SaveTasksToFile();
         }
 
         public bool CompleteTask(int taskId)

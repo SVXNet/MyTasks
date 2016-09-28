@@ -109,6 +109,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\FirstView.cs" />
+    <Compile Include="Views\TaskDetailsView.cs" />
     <Compile Include="Views\TaskListView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +123,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\TaskListView_ListItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TaskDetailsView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text TaskModel.Title" />
+    <MvxDatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="true"
+        android:spinnersShown="false"
+        local:MvxBind="Value TaskModel.CompleteBy" />
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <Button
+      android:layout_width="0px"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Completed"
+      local:MvxBind="Click MarkAsDoneCommand"
+      />
+    <Button
+      android:layout_width="0px"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="Update"
+      local:MvxBind="Click UpdateCommand"
+      />
+  </LinearLayout>
+</LinearLayout>

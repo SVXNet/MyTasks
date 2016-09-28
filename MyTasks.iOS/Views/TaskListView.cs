@@ -29,6 +29,7 @@ namespace MyTasks.iOS.Views
             var source = new MvxStandardTableViewSource(TaskListTableView, "TitleText Title");
             TaskListTableView.Source = source;
             set.Bind(source).To(vm => vm.ListItems);
+            set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ItemSelectedCommand);
             set.Apply();
 
             TaskListTableView.ReloadData();

@@ -12,6 +12,8 @@ namespace MyTasks.Core.Services
 
         TaskModel GetTaskDetails(int taskId);
 
+        void SaveTasks();
+
         bool CompleteTask(int taskId);
 
         bool DeleteTask(int taskId);

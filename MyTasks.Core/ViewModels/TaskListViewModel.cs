@@ -7,7 +7,7 @@ namespace MyTasks.Core.ViewModels
 {
     public class TaskListViewModel : MvxViewModel
     {
-        private ITaskService _taskService;
+        private readonly ITaskService _taskService;
         public ObservableCollection<TaskModel> ListItems { get; set; }
 
         public TaskListViewModel(ITaskService taskService)
@@ -33,10 +33,21 @@ namespace MyTasks.Core.ViewModels
                 return;
             }
             var item = _taskService.AddTask(NewTaskTitle);
+            NewTaskTitle = null;
             ListItems.Add(item);
         }
 
-        public override void Start()
+        public IMvxCommand ItemSelectedCommand => new MvxCommand<TaskModel>(ItemSelected);
+
+        private void ItemSelected(TaskModel task)
+        {
+            if (task == null)
+            {
+                return;
+            }
+            ShowViewModel<TaskDetailsViewModel>(new TaskDetailsViewModel.Parameters {TaskId = task.Id});
+        }
+        public override void Start()
         {
             base.Start();
             LoadTasks();
