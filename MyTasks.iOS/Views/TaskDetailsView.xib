@@ -7,10 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskDetailsView">
             <connections>
                 <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
-                <outlet property="CompletedButton" destination="13" id="name-outlet-13"/>
-                <outlet property="UpdateButton" destination="14" id="name-outlet-14"/>
-                <outlet property="TaskTitleTextField" destination="10" id="name-outlet-10"/>
+                <outlet property="TaskTitleTextField" destination="17" id="name-outlet-17"/>
                 <outlet property="CompleteByDatePicker" destination="11" id="name-outlet-11"/>
+                <outlet property="UpdateButton" destination="14" id="name-outlet-14"/>
+                <outlet property="CompletedButton" destination="13" id="name-outlet-13"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,46 +18,54 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="5" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually">
-                    <rect key="frame" x="20" y="20" width="560" height="560"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="11" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="20" y="130" width="560" height="359"/>
+                    <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
+                        <!--2011-07-18 18:00:01 +0000-->
+                    </date>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="20" y="130" width="280" height="359"/>
+                    </variation>
+                </datePicker>
+                <stackView opaque="NO" contentMode="scaleToFill" id="12" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually" spacing="28" misplaced="YES">
+                    <rect key="frame" x="210" y="500" width="180" height="30"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="10" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="560" height="186.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="11" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                            <rect key="frame" x="0.0" y="186.5" width="560" height="187"/>
-                            <date key="date" timeIntervalSinceReferenceDate="332704801.65417802">
-                                <!--2011-07-18 18:00:01 +0000-->
-                            </date>
-                        </datePicker>
-                        <stackView opaque="NO" contentMode="scaleToFill" id="12" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" distribution="fillEqually">
-                            <rect key="frame" x="0.0" y="373.5" width="560" height="186.5"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="186.5"/>
-                                    <state key="normal" title="Completed">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                    <rect key="frame" x="280" y="0.0" width="280" height="186.5"/>
-                                    <state key="normal" title="Update">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-                            </subviews>
-                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
+                            <state key="normal" title="Completed">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <rect key="frame" x="104" y="0.0" width="76" height="30"/>
+                            <state key="normal" title="Update">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
+                    <constraints>
+                        <constraint id="30" firstItem="12" firstAttribute="height" constant="30"/>
+                    </constraints>
                 </stackView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="17" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="20" y="70" width="560" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <constraints>
-                <constraint id="6" firstItem="5" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20"/>
-                <constraint id="7" firstItem="2" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" constant="20"/>
-                <constraint id="8" firstItem="2" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" constant="20"/>
-                <constraint id="9" firstItem="5" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20"/>
+                <constraint id="18" firstItem="11" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20"/>
+                <constraint id="19" firstItem="2" firstAttribute="trailing" secondItem="11" secondAttribute="trailing" constant="20"/>
+                <constraint id="20" firstItem="11" firstAttribute="top" secondItem="17" secondAttribute="bottom" constant="30"/>
+                <constraint id="21" firstItem="12" firstAttribute="top" secondItem="11" secondAttribute="bottom" constant="20"/>
+                <constraint id="23" firstItem="17" firstAttribute="leading" secondItem="11" secondAttribute="leading"/>
+                <constraint id="24" firstItem="17" firstAttribute="trailing" secondItem="11" secondAttribute="trailing"/>
+                <constraint id="26" firstItem="12" firstAttribute="centerX" secondItem="11" secondAttribute="centerX"/>
+                <constraint id="29" firstItem="17" firstAttribute="top" secondItem="2" secondAttribute="top" constant="70"/>
             </constraints>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
